@@ -9,7 +9,7 @@ const page = ref('1')
 
 async function fetchMovie() {
   try {
-    const result = await apiService.getMovie(query.value, page.value)
+    const result = await apiService.searchMovies(query.value, page.value)
     if (result.Response === 'True') {
       emit('search', result)
     } else {
